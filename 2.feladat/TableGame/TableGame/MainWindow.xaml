@@ -1,0 +1,41 @@
+﻿<Window x:Class="TableGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TableGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Button Name="btn00" Grid.Row="0" Grid.Column="1" Click="Btn_Click" Content="0" />
+        <Button Name="btn01" Grid.Row="0" Grid.Column="2" Click="Btn_Click" Content="0" />
+        <Button Name="btn02" Grid.Row="0" Grid.Column="3" Click="Btn_Click" Content="0" />
+        <Button Name="btn10" Grid.Row="1" Grid.Column="1" Click="Btn_Click" Content="0" />
+        <Button Name="btn11" Grid.Row="1" Grid.Column="2" Click="Btn_Click" Content="0" />
+        <Button Name="btn12" Grid.Row="1" Grid.Column="3" Click="Btn_Click" Content="0" />
+        <Button Name="btn20" Grid.Row="2" Grid.Column="1" Click="Btn_Click" Content="0" />
+        <Button Name="btn21" Grid.Row="2" Grid.Column="2" Click="Btn_Click" Content="0" />
+        <Button Name="btn22" Grid.Row="2" Grid.Column="3" Click="Btn_Click" Content="0" />
+
+        <Button Name="btnA" Grid.Row="0" Grid.Column="0" Content="A" Click="IncrementA" />
+        <Button Name="btnB" Grid.Row="0" Grid.Column="4" Content="B" Click="IncrementB" />
+        <Button Name="btnC" Grid.Row="2" Grid.Column="0" Content="C" Click="IncrementC" />
+        <Button Name="btnD" Grid.Row="2" Grid.Column="4" Content="D" Click="IncrementD" />
+
+        <Button Name="btnReset" Grid.Row="4" Grid.Column="2" Content="Nullázás" Click="ResetBoard" />
+    </Grid>
+</Window>

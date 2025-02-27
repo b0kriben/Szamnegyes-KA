@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Számnégyesek kezelése</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #fours {
+            margin-top: 20px;
+        }
+        input[type="number"] {
+            width: 50px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Számnégyesek kezelése</h1>
+    <h2>Új számnégyes hozzáadása</h2>
+    <form id="addForm">
+        <input type="number" id="num1" required>
+        <input type="number" id="num2" required>
+        <input type="number" id="num3" required>
+        <input type="number" id="num4" required>
+        <button type="submit">Hozzáadás</button>
+    </form>
+    
+    <div id="fours">
+        <h2>Számnégyesek</h2>
+        <ul id="foursList"></ul>
+    </div>
+
+    <script>
+        document.getElementById("addForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+            const num3 = document.getElementById("num3").value;
+            const num4 = document.getElementById("num4").value;
+
+            const data = [num1, num2, num3, num4];
+            
+            fetch("/fours", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Számnégyes hozzáadva!");
+                loadFours();
+            });
+        });
+
+        function loadFours() {
+            fetch("/fours")
+                .then(response => response.json())
+                .then(data => {
+                    const list = document.getElementById("foursList");
+                    list.innerHTML = "";
+                    for (const id in data) {
+                        const li = document.createElement("li");
+                        li.textContent = `ID: ${id}, ${data[id].join(", ")}`;
+                        list.appendChild(li);
+                    }
+                });
+        }
+
+        loadFours(); // Betölti a számnégyeseket az oldal betöltésekor
+    </script>
+</body>
+</html>
