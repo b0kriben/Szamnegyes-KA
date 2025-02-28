@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TableGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -21,21 +21,55 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Button Name="btn00" Grid.Row="0" Grid.Column="1" Click="Btn_Click" Content="0" />
-        <Button Name="btn01" Grid.Row="0" Grid.Column="2" Click="Btn_Click" Content="0" />
-        <Button Name="btn02" Grid.Row="0" Grid.Column="3" Click="Btn_Click" Content="0" />
-        <Button Name="btn10" Grid.Row="1" Grid.Column="1" Click="Btn_Click" Content="0" />
-        <Button Name="btn11" Grid.Row="1" Grid.Column="2" Click="Btn_Click" Content="0" />
-        <Button Name="btn12" Grid.Row="1" Grid.Column="3" Click="Btn_Click" Content="0" />
-        <Button Name="btn20" Grid.Row="2" Grid.Column="1" Click="Btn_Click" Content="0" />
-        <Button Name="btn21" Grid.Row="2" Grid.Column="2" Click="Btn_Click" Content="0" />
-        <Button Name="btn22" Grid.Row="2" Grid.Column="3" Click="Btn_Click" Content="0" />
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1">
+            <TextBlock Name="btn00" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="2">
+            <TextBlock Name="btn01" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="3">
+            <TextBlock Name="btn02" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1">
+            <TextBlock Name="btn10" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="2">
+            <TextBlock Name="btn11" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="3">
+            <TextBlock Name="btn12" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="1">
+            <TextBlock Name="btn20" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="2">
+            <TextBlock Name="btn21" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="3">
+            <TextBlock Name="btn22" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        </Border>
 
-        <Button Name="btnA" Grid.Row="0" Grid.Column="0" Content="A" Click="IncrementA" />
-        <Button Name="btnB" Grid.Row="0" Grid.Column="4" Content="B" Click="IncrementB" />
-        <Button Name="btnC" Grid.Row="2" Grid.Column="0" Content="C" Click="IncrementC" />
-        <Button Name="btnD" Grid.Row="2" Grid.Column="4" Content="D" Click="IncrementD" />
 
-        <Button Name="btnReset" Grid.Row="4" Grid.Column="2" Content="Nullázás" Click="ResetBoard" />
+
+
+
+        <Border BorderBrush="Black" BorderThickness="1" Width="100" Height="100" Grid.Row="0" Grid.Column="0">
+            <Button Name="btnA" Content="A" Click="IncrementA"  FontSize="40" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Width="100" Height="100" Grid.Row="0" Grid.Column="4">
+            <Button Name="btnB" Content="B" Click="IncrementB"  FontSize="40" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Width="100" Height="100" Grid.Row="2" Grid.Column="0">
+            <Button Name="btnC" Content="C" Click="IncrementC"  FontSize="40" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Width="100" Height="100" Grid.Row="2" Grid.Column="4">
+            <Button Name="btnD" Content="D" Click="IncrementD"  FontSize="40" FontWeight="Bold"/>
+        </Border>
+
+
+
+        <Border BorderBrush="Black" BorderThickness="1" Width="100" Height="100" Grid.Row="4" Grid.Column="2" Margin="0 10 0 0">
+            <Button Name="btnReset" Content="Nullázás" Click="ResetBoard"  FontSize="17" FontWeight="Bold"/>
+        </Border>
     </Grid>
 </Window>
