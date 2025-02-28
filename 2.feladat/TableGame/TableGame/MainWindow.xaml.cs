@@ -14,10 +14,17 @@ namespace TableGame
     public partial class MainWindow : Window
     {
         private int[,] table = new int[3, 3];
+        private TextBlock[,] buttons;
 
         public MainWindow()
         {
             InitializeComponent();
+            buttons = new TextBlock[3, 3]
+            {
+                { btn00, btn01, btn02 },
+                { btn10, btn11, btn12 },
+                { btn20, btn21, btn22 }
+            };
         }
 
         private void Btn_Click(object sender, RoutedEventArgs e)
@@ -57,8 +64,8 @@ namespace TableGame
                 for (int j = 0; j < 2; j++)
                 {
                     table[rowStart + i, colStart + j]++;
-                    var btn = (Button)FindName($"btn{rowStart + i}{colStart + j}");
-                    btn.Content = table[rowStart + i, colStart + j].ToString();
+                    var btn = (TextBlock)FindName($"btn{rowStart + i}{colStart + j}");
+                    btn.Text = table[rowStart + i, colStart + j].ToString();
                 }
             }
         }
@@ -66,29 +73,10 @@ namespace TableGame
         private void ResetBoard(object sender, RoutedEventArgs e)
         {
             table = new int[3, 3];
-            foreach (var btn in this.FindVisualChildren<Button>())
-            {
-                btn.Content = "0";
-            }
-        }
 
-        public static System.Collections.Generic.IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
-        {
-            if (depObj != null)
+            foreach (var btn in buttons)
             {
-                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
-                {
-                    DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
-                    if (child is T)
-                    {
-                        yield return (T)child;
-                    }
-
-                    foreach (T childOfChild in FindVisualChildren<T>(child))
-                    {
-                        yield return childOfChild;
-                    }
-                }
+                btn.Text = "0";
             }
         }
     }
